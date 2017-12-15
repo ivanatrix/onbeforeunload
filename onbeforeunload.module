@@ -1,0 +1,11 @@
+<?php
+/**
+ * Make the onBeforeUnload API available to javascripts on the page.
+ */
+function onbeforeunload_add_js() {
+  static $ready;
+  if (!isset($ready)) {
+    $ready = TRUE;
+    drupal_add_js(drupal_get_path('module', 'onbeforeunload') .'/onbeforeunload.js');
+  }
+}
